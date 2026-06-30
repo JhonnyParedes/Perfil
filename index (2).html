@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jhonny Paredes — Analista de Operaciones & BI</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue-dark:#0C447C;--blue-mid:#378ADD;--blue-light:#E6F1FB;
+  --blue-pale:#B5D4F4;--header-bg:#042C53;--gray:#444441;
+  --gray-light:#D3D1C7;--white:#fff;--bg:#F8F7F4;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--gray);line-height:1.6}
+a{color:var(--blue-mid);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+nav{background:var(--header-bg);padding:0 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:54px}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--blue-pale);font-size:17px;letter-spacing:0.3px}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:var(--blue-pale);font-size:13px;letter-spacing:0.8px;text-transform:uppercase;opacity:0.8;transition:opacity .2s}
+.nav-links a:hover{opacity:1;text-decoration:none}
+
+/* HERO */
+.hero{background:var(--blue-dark);color:var(--white);padding:70px 5% 60px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.hero-name{font-family:'Playfair Display',serif;font-size:48px;font-weight:600;color:#E6F1FB;line-height:1.1;margin-bottom:12px}
+.hero-sub{font-size:15px;color:var(--blue-pale);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:24px}
+.hero-desc{font-size:16px;color:#B5D4F4;max-width:520px;line-height:1.7;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--blue-mid);color:var(--white);padding:11px 24px;border-radius:6px;font-size:14px;font-weight:500;border:none;cursor:pointer;transition:background .2s}
+.btn-primary:hover{background:#185FA5;text-decoration:none;color:#fff}
+.btn-outline{background:transparent;color:var(--blue-pale);padding:10px 24px;border-radius:6px;font-size:14px;font-weight:500;border:1.5px solid rgba(181,212,244,0.4);cursor:pointer;transition:all .2s}
+.btn-outline:hover{border-color:var(--blue-pale);background:rgba(181,212,244,0.08);text-decoration:none;color:var(--blue-pale)}
+.hero-avatar{width:130px;height:130px;border-radius:50%;background:var(--blue-mid);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:42px;color:var(--white);flex-shrink:0;border:3px solid rgba(181,212,244,0.3)}
+
+/* TAG BAR */
+.tagbar{background:var(--header-bg);padding:12px 5%;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:11.5px;color:var(--blue-pale);padding:4px 12px;border-radius:20px;border:1px solid rgba(133,183,235,0.35);letter-spacing:0.5px}
+
+/* SECTIONS */
+section{padding:64px 5%}
+section:nth-child(even){background:var(--white)}
+.section-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:8px}
+.section-title{font-family:'Playfair Display',serif;font-size:30px;color:#2C2C2A;margin-bottom:32px;font-weight:600}
+
+/* METRICS */
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:48px}
+.metric-card{background:var(--blue-light);border-radius:10px;padding:20px 24px;border-left:3px solid var(--blue-mid)}
+.metric-num{font-family:'Playfair Display',serif;font-size:32px;color:var(--blue-dark);font-weight:600;line-height:1.1}
+.metric-desc{font-size:13px;color:#185FA5;margin-top:6px;line-height:1.4}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.skill-card{background:var(--white);border:0.5px solid var(--gray-light);border-radius:10px;padding:20px}
+.skill-card-title{font-size:13px;font-weight:500;color:#2C2C2A;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.skill-card-title span{width:28px;height:28px;background:var(--blue-light);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--blue-dark)}
+.skill-pills{display:flex;flex-wrap:wrap;gap:6px}
+.skill-pill{font-size:12px;padding:3px 10px;border-radius:4px;background:var(--bg);border:0.5px solid var(--gray-light);color:var(--gray)}
+.skill-pill.hi{background:var(--blue-light);border-color:var(--blue-pale);color:var(--blue-dark)}
+
+/* EXPERIENCE */
+.exp-timeline{position:relative;padding-left:28px}
+.exp-timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1.5px;background:var(--gray-light)}
+.exp-item{position:relative;margin-bottom:36px}
+.exp-item::before{content:'';position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--blue-mid);border:3px solid var(--white);outline:1.5px solid var(--blue-mid)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:4px}
+.exp-role{font-size:16px;font-weight:500;color:#2C2C2A}
+.exp-period{font-size:12px;color:var(--blue-mid);font-weight:500;white-space:nowrap;padding-top:2px}
+.exp-company{font-size:13px;color:var(--gray);font-style:italic;margin-bottom:12px}
+.exp-bullets{list-style:none;padding:0}
+.exp-bullets li{font-size:14px;color:var(--gray);padding-left:16px;position:relative;margin-bottom:6px;line-height:1.6}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--blue-mid);font-size:11px;top:3px}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.edu-card{background:var(--bg);border-radius:10px;padding:18px 20px;border:0.5px solid var(--gray-light)}
+.edu-degree{font-size:14px;font-weight:500;color:#2C2C2A;margin-bottom:4px}
+.edu-inst{font-size:12.5px;color:var(--blue-mid)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.contact-card{background:var(--white);border:0.5px solid var(--gray-light);border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:14px}
+.contact-icon{width:36px;height:36px;background:var(--blue-light);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--blue-dark);font-size:17px;flex-shrink:0}
+.contact-label{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:0.8px}
+.contact-val{font-size:13.5px;color:#2C2C2A;font-weight:500;margin-top:2px}
+
+/* FOOTER */
+footer{background:var(--header-bg);color:var(--blue-pale);text-align:center;padding:20px 5%;font-size:13px}
+
+@media(max-width:600px){
+  .hero{grid-template-columns:1fr}.hero-avatar{display:none}
+  .hero-name{font-size:34px}.exp-header{flex-direction:column;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Jhonny Paredes</div>
+  <div class="nav-links">
+    <a href="#logros">Logros</a>
+    <a href="#skills">Skills</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="hero-name">Jhonny Paredes</div>
+    <div class="hero-sub">Analista de Operaciones · Control de Gestión · BI & Analytics</div>
+    <div class="hero-desc">Ingeniero Industrial con +5 años transformando datos operativos en decisiones estratégicas. Experto en Power BI, SAP HANA y modelos de forecast para corporativos de primer nivel.</div>
+    <div class="hero-btns">
+      <a href="mailto:jho1.95@gmail.com" class="btn-primary">Contactar</a>
+      <a href="https://linkedin.com/in/jhonny-paredessandoval-aa937b174" target="_blank" class="btn-outline">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="hero-avatar">JP</div>
+</div>
+
+<div class="tagbar">
+  <span class="tag">Control Presupuestal</span>
+  <span class="tag">CAPEX / OPEX</span>
+  <span class="tag">Forecast</span>
+  <span class="tag">Power BI Avanzado</span>
+  <span class="tag">SAP HANA</span>
+  <span class="tag">Excel Avanzado</span>
+  <span class="tag">SQL</span>
+  <span class="tag">Python</span>
+  <span class="tag">Cierre Mensual</span>
+  <span class="tag">FP&A</span>
+</div>
+
+<section id="logros">
+  <div class="section-label">Impacto comprobado</div>
+  <div class="section-title">Logros clave</div>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-num">US$ 227K</div>
+      <div class="metric-desc">Ahorrados optimizando presupuesto OPEX mediante análisis de desviaciones y reportes de gestión mensual</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">−40%</div>
+      <div class="metric-desc">Reducción en tiempo de generación de informes gerenciales con dashboards Power BI conectados a SAP HANA</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">−5%</div>
+      <div class="metric-desc">Reducción de costos operativos en PARSA Inversiones mediante optimización de recursos y negociación con proveedores</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">BREIT</div>
+      <div class="metric-desc">Iniciativas de Data Analytics integradas al programa corporativo BRECA 2022–2023</div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">Herramientas & conocimientos</div>
+  <div class="section-title">Competencias</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-title"><span>📊</span> BI & Reportes</div>
+      <div class="skill-pills">
+        <span class="skill-pill hi">Power BI</span>
+        <span class="skill-pill hi">SAP HANA</span>
+        <span class="skill-pill">SAC Planning</span>
+        <span class="skill-pill hi">Excel Avanzado</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-title"><span>💻</span> Datos & Código</div>
+      <div class="skill-pills">
+        <span class="skill-pill hi">SQL</span>
+        <span class="skill-pill hi">Python</span>
+        <span class="skill-pill">ETL</span>
+        <span class="skill-pill">Modelado de datos</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-title"><span>📈</span> Control de Gestión</div>
+      <div class="skill-pills">
+        <span class="skill-pill hi">Presupuesto anual</span>
+        <span class="skill-pill hi">CAPEX/OPEX</span>
+        <span class="skill-pill hi">Forecast</span>
+        <span class="skill-pill">Cierre mensual</span>
+        <span class="skill-pill">Estructuras de costos</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-title"><span>🎯</span> Gestión & Metodologías</div>
+      <div class="skill-pills">
+        <span class="skill-pill">PMI</span>
+        <span class="skill-pill">Balanced Scorecard</span>
+        <span class="skill-pill">SCRUM</span>
+        <span class="skill-pill">Lean Fase 1</span>
+        <span class="skill-pill">IDAS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="section-label">Trayectoria profesional</div>
+  <div class="section-title">Experiencia</div>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Analista de Operaciones</div>
+        <div class="exp-period">Ene 2021 – Actualidad</div>
+      </div>
+      <div class="exp-company">TASA (Grupo BRECA) — Corporativo, Lima</div>
+      <ul class="exp-bullets">
+        <li>Lideré control y seguimiento presupuestal OPEX/CAPEX con reportes comparativos reales vs presupuestados para la Subgerencia.</li>
+        <li>Soporte en presupuesto anual y proyecciones mensuales/anuales coordinando con Comercial, Producción y Contraloría.</li>
+        <li>Coordiné cierre contable mensual validando producción, órdenes de fabricación y provisiones en SAP HANA.</li>
+        <li>Automaticé reportes de control de gestión en Power BI, mejorando visibilidad ejecutiva en tiempo real.</li>
+        <li>Elaboré modelos de forecast con escenarios dinámicos (Power BI, SAP HANA, Excel Avanzado).</li>
+        <li>Integré iniciativas de Data Analytics en el programa BREIT 2022–2023.</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Trainee de Operaciones</div>
+        <div class="exp-period">2020 – 2021</div>
+      </div>
+      <div class="exp-company">TASA (Grupo BRECA) — Planta Chimbote</div>
+      <ul class="exp-bullets">
+        <li>Proyectos de mejora continua (metodología IDAS) con desarrollo en liderazgo y gestión del cambio.</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Asistente Administrativo</div>
+        <div class="exp-period">2019</div>
+      </div>
+      <div class="exp-company">PARSA Inversiones</div>
+      <ul class="exp-bullets">
+        <li>Diseñé herramientas de control de gastos, reduciendo 5% costos operativos mediante optimización y negociación con proveedores.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Formación académica</div>
+  <div class="section-title">Educación</div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-degree">Ingeniero Industrial</div>
+      <div class="edu-inst">Univ. Privada Antenor Orrego</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">Finanzas Corporativas</div>
+      <div class="edu-inst">ESAN — Diplomado</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">Business Analytics & Lean</div>
+      <div class="edu-inst">Centrum PUCP</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">Planeamiento Estratégico & BSC</div>
+      <div class="edu-inst">Universidad del Pacífico</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">Gerencia de Proyectos (PMI)</div>
+      <div class="edu-inst">INAGEP — Diplomado</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">SQL · Power BI · Python · SAP · SCRUM</div>
+      <div class="edu-inst">Cursos especializados</div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="section-label">Hablemos</div>
+  <div class="section-title">Contacto</div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">✉</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-val"><a href="mailto:jho1.95@gmail.com">jho1.95@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📱</div>
+      <div>
+        <div class="contact-label">Teléfono</div>
+        <div class="contact-val">+51 922 520 332</div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">🔗</div>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-val"><a href="https://linkedin.com/in/jhonny-paredessandoval-aa937b174" target="_blank">jhonny-paredessandoval</a></div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">Ubicación</div>
+        <div class="contact-val">Lima, Perú</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Jhonny Paredes Sandoval &nbsp;·&nbsp; Analista de Operaciones & BI &nbsp;·&nbsp; Lima, Perú
+</footer>
+
+</body>
+</html>
